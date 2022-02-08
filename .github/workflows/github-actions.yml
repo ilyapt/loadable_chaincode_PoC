@@ -4,6 +4,6 @@ jobs:
   Mock_Test:
     runs-on: golang:1.18
     steps:
-      - go mod vendor
-      - go build -buildmode=plugin -o smart-contract.so -ldflags "-s -w" ./smart-contract.go
-      - go test -v --count=1 .
+      - run: go mod vendor
+      - run: go build -buildmode=plugin -o smart-contract.so -ldflags "-s -w" ./smart-contract.go
+      - run: go test -v --count=1 .
