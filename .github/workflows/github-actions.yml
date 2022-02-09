@@ -14,8 +14,11 @@ jobs:
       - name: Download dependencies
         run: go mod vendor
 
-      - name: Build smart-contract as a plugin
-        run: go build -buildmode=plugin -o smart-contract.so -ldflags "-s -w" ./smart-contract.go
+      - name: Build smart-contract 1 as a plugin
+        run: go build -buildmode=plugin -o smart-contract1.so -ldflags "-s -w" ./smart-contract1.go
+
+      - name: Build smart-contract 2 as a plugin
+        run: go build -buildmode=plugin -o smart-contract2.so -ldflags "-s -w" ./smart-contract2.go
 
       - name: Execute test
         run: go test -v --count=1 .
