@@ -21,4 +21,4 @@ jobs:
         run: go build -buildmode=plugin -o smart-contract2.so -ldflags "-s -w" ./smart-contract2.go
 
       - name: Execute test
-        run: go test -v --count=1 .
+        run: go test -v --count=1 loadable_test.go main_chaincode.go
